@@ -36,13 +36,10 @@ while not Salir:
    if len(Movimiento) == 0:
        print("No hay movimientos registrados.")
        break
-      
    else:
-       for Movimiento in Movimiento:
-         print(Movimiento)
+       for Mov in Movimiento:
+         print(Mov)
        break
-
-   print("No hay movimientos registrados.")
      
   print ("1. Volver al menu     2. Salir \n")
   sub= input ("Seleccione una opcion")
