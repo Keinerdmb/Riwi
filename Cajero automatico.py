@@ -34,7 +34,7 @@ while not Salir:
 #OPCION 2: CONSULTAS DE MOVIMIENTO
  elif opcion == "2":
   while True:  
-   print("\n ---- MOVIMIENTOS ----")
+   print(" ---- MOVIMIENTOS ----\n")
    if len(Movimiento) == 0:
        print("No hay movimientos registrados.")
        break
@@ -133,14 +133,14 @@ while not Salir:
  elif opcion == "7":
     while True:  
      try:
-       Deposito = float(input("Ingrese el monto a depositar: $"))
+       Deposito = float(input("Ingrese el monto a depositar: $\n"))
        
        if Deposito < 0:
-         print("El monto no puede ser negativo. Intente nuevamente.")
+         print("El monto no puede ser negativo. Intente nuevamente.\n")
 
        elif Deposito >= 0:
          Saldo += Deposito
-         Movimiento.append(f"Depósito: +${Deposito}")
+         Movimiento.append(f"Depósito: +${Deposito}\n")
          print(f"Depósito exitoso. Nuevo saldo: ${Saldo}\n")
          
       
