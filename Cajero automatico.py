@@ -36,8 +36,8 @@ while not Salir:
      print("Movimientos recientes:")
      for mov in Movimiento:
        print(mov)
-       Movimiento.append(f"Retiro: -${Retirar_dinero} |Saldo actual: ${Saldo}")
-       Movimiento.append(f"Depósito: +${Deposito} |Saldo actual: ${Saldo}")  
+       Movimiento.append(f"Retiro: -${Retirar_dinero}")
+       Movimiento.append(f"Depósito: +${Deposito}")
        break
 
    else:
