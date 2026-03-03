@@ -1,3 +1,5 @@
+#Hecho por Joan/Keiner
+
 import random 
 Salir = False
 Saldo = 0
@@ -159,3 +161,4 @@ while not Salir:
        break
  else:
    print("Opción inválida. Por favor, seleccione una opción válida.")     
+ 
