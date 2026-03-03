@@ -1,0 +1,9 @@
+Color	Código
+Rojo	\033[31m
+Verde	\033[32m
+Amarillo	\033[33m
+Azul	\033[34m
+Magenta	\033[35m
+Cyan	\033[36m
+Blanco	\033[37m
+Reset (volver normal)	\033[0m
