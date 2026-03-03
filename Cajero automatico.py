@@ -3,7 +3,7 @@ Saldo = 0
 Retirar_dinero = 0
 Deposito = 0
 Clave = 123456
-Movimiento = []
+Movimiento= []
 
 while not Salir:
 
@@ -31,23 +31,28 @@ while not Salir:
 
 #OPCION 2: CONSULTAS DE MOVIMIENTO
  elif opcion == "2":
-   
-   if Movimiento:
-     print("Movimientos recientes:")
-     for mov in Movimiento:
-       print(mov)
-       Movimiento.append(f"Retiro: -${Retirar_dinero} |Saldo actual: ${Saldo}")
-       Movimiento.append(f"Depósito: +${Deposito} |Saldo actual: ${Saldo}")  
+  while True:  
+   print("\n ---- MOVIMIENTOS ----")
+   if len(Movimiento) == 0:
+       print("No hay movimientos registrados.")
+       break
+      
+   else:
+       for Movimiento in Movimiento:
+         print(Movimiento)
        break
 
-   else:
-     print("No hay movimientos registrados.")
-   while True:
-     print ("1. Volver al menu     2. Salir \n")
-     sub= input ("Seleccione una opcion")
-     if sub == "1":
+   print("No hay movimientos registrados.")
+     
+  print ("1. Volver al menu     2. Salir \n")
+  sub= input ("Seleccione una opcion")
+  while True:
+
+   if sub == "1":
+       
        break
-     elif sub == "2":
+     
+   elif sub == "2":
        print ("¡Hasta luego!")
        Salir = True
        break       
@@ -68,8 +73,7 @@ while not Salir:
      #OPCION 4: RETIRO
  elif opcion == "4": 
    while True:
-     try:
-       Retirar_dinero = int(input("Ingrese el monto a retirar: $"))
+       Retirar_dinero = float(input("Ingrese el monto a retirar: $"))
        if Retirar_dinero < 0:
          print("El monto no puede ser negativo. Intente nuevamente.")
        elif Retirar_dinero > Saldo:
@@ -77,12 +81,10 @@ while not Salir:
          break
        else:
          Saldo -= Retirar_dinero
-         Movimiento.append(f"Retiro: -${Retirar_dinero} |Saldo actual: ${Saldo}")
+         Movimiento.append(f"Retiro: -${Retirar_dinero}")
          print(f"Retiro exitoso. Nuevo saldo: ${Saldo}")
          break
-     except ValueError:
-       print("Entrada inválida. Por favor, ingrese un número válido.")
-  
+    
    while True:
      print ("1. Volver al menu     2. Salir \n")
      sub= input ("Seleccione una opcion")
@@ -130,19 +132,16 @@ while not Salir:
      
      #OPCION 7: DEPOSITAR
  elif opcion == "7":
-    while True:
+    while True:  
      try:
-       Movimiento.append(f"Depósito: +${Deposito} |Saldo actual: ${Saldo}") 
-       print(f"Depósito exitoso. Nuevo saldo: ${Saldo}")
-       Deposito = int(input("Ingrese el monto a depositar: $"))
+       Deposito = float(input("Ingrese el monto a depositar: $"))
        
        if Deposito < 0:
          print("El monto no puede ser negativo. Intente nuevamente.")
 
-       
        elif Deposito >= 0:
          Saldo += Deposito
-         Movimiento.append(f"Depósito: +${Deposito} |Saldo actual: ${Saldo}")
+         Movimiento.append(f"Depósito: +${Deposito}")
          print(f"Depósito exitoso. Nuevo saldo: ${Saldo}\n")
          
       
