@@ -114,7 +114,7 @@ while not Salir:
      
      #OPCION 6: TRANSFERENCIA
  elif opcion == "6":
-   print("Función de transferencia no implementada aún.")
+   print("\033[32mFunción de transferencia no implementada aún.\033[0m")
    while True:
      
      print ("1. Volver al menu     2. Salir \n")
