@@ -1,5 +1,16 @@
 #Hecho por Joan/Keiner
 
+import time
+
+print("Iniciando cajero Automatico...\n")
+print("Por favor Espere...\n")
+
+#Cuenta regresiva de 3 segundos
+
+for i in range(5, 0, -1):
+  print(f"Iniciando en {i}...")
+  time.sleep(1) #Espere 1 segundo
+
 import random 
 Salir = False
 Saldo = 0
@@ -7,9 +18,15 @@ Retirar_dinero = 0
 Deposito = 0
 Movimiento= []
 
+import os
+
+def limpiar_pantalla():
+    os.system('cls' if os.name == 'nt' else 'clear') #termina el codigo de limpiar pantalla 
+
 while not Salir:
 
 #OPCION 1: CLAVES
+ print("\n¡Bienvenido al cajero automatico!\n")  
  print("       ""\033[1mSELECCIONE SU OPERACION\033[0m"" \n ")
  print("GESTION DE RETIRO RAPIDO \n")
  print("1. CLAVE             2. CONSULTAS DE MOVIMIENTO \n")
