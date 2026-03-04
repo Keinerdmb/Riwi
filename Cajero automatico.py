@@ -10,7 +10,7 @@ Movimiento= []
 while not Salir:
 
 #OPCION 1: CLAVES
- print("       ""SELECCIONE SU OPERACION"" \n ")
+ print("       ""\033[1mSELECCIONE SU OPERACION\033[0m"" \n ")
  print("GESTION DE RETIRO RAPIDO \n")
  print("1. CLAVE             2. CONSULTAS DE MOVIMIENTO \n")
  print("3. PAGOS              4. RETIRO\n")
@@ -19,15 +19,15 @@ while not Salir:
  opcion = input( "SELECCIONE UNA OPCION:")
 
  if opcion == "1":
-    print (f"Tu clave es: {random.randint(100000, 999999)}\n")
+    print (f"Tu clave es: \033[1m\033[34m1{random.randint(100000, 999999)}\033[0m\n")
     while True:
 
-     print ("1. Volver al menu     2. Salir \n")
+     print ("\033[1m\033[34m1. Volver al menu\033[0m     \033[1m\033[31m2. Salir \n\033[0m")
      sub= input ("Seleccione una opcion\n")
      if sub == "1":
        break
      elif sub == "2":
-       print ("¡Hasta luego!")
+       print ("\033[33m\033[1m¡HASTA LUEGO!\033[0m")
        Salir = True
        break
 
@@ -36,14 +36,14 @@ while not Salir:
   while True:  
    print(" ---- MOVIMIENTOS ----\n")
    if len(Movimiento) == 0:
-       print("No hay movimientos registrados.")
+       print("\033[31mNo hay movimientos registrados.\033[0m")
        break
    else:
        for Mov in Movimiento:
          print(Mov)
        break
      
-  print ("1. Volver al menu     2. Salir \n")
+  print ("\033[1m\033[34m1. Volver al menu\033[0m     \033[1m\033[31m2. Salir \n\033[0m")
   sub= input ("Seleccione una opcion")
   while True:
 
@@ -52,20 +52,20 @@ while not Salir:
        break
      
    elif sub == "2":
-       print ("¡Hasta luego!")
+       print ("\033[33m\033[1m¡HASTA LUEGO!\033[0m")
        Salir = True
        break       
      
      #OPCION 3: PAGOS
  elif opcion == "3":
-   print("Función de pagos no implementada aún.")
+   print("\033[31mFunción de pagos no implementada aún.\033[0m")
    while True:
-     print ("1. Volver al menu     2. Salir \n")
+     print ("\033[1m\033[34m1. Volver al menu\033[0m     \033[1m\033[31m2. Salir \n\033[0m")
      sub= input ("Seleccione una opcion")
      if sub == "1":
        break
      elif sub == "2":
-       print ("¡Hasta luego!")
+       print ("\033[33m\033[1m¡HASTA LUEGO!\033[0m")
        Salir = True
        break       
      
@@ -74,24 +74,24 @@ while not Salir:
    while True:
        Retirar_dinero = float(input("Ingrese el monto a retirar: $"))
        if Retirar_dinero < 0:
-         print("El monto no puede ser negativo. Intente nuevamente.")
+         print("\033[31mEl monto no puede ser negativo. Intente nuevamente.\033[0m")
        elif Retirar_dinero > Saldo:
-         print("Fondos insuficientes.")
+         print("\033[31mFondos insuficientes.\033[0m")
          break
        else:
          Saldo -= Retirar_dinero
          Movimiento.append(f"Retiro: -${Retirar_dinero}")
-         print(f"Retiro exitoso. Nuevo saldo: ${Saldo}")
+         print(f"\033[32mRetiro exitoso. Nuevo saldo: ${Saldo}\033[0m")
          break
     
    while True:
-     print ("1. Volver al menu     2. Salir \n")
+     print ("\033[34m1. Volver al menu\033[0m     \033[31m2. Salir \n\033[0m")
      sub= input ("Seleccione una opcion")
      if sub == "1":
        break
      
      elif sub == "2":
-       print ("¡Hasta luego!")
+       print ("\033[33m\033[1m¡HASTA LUEGO!\033[0m")
        Salir = True
        break       
      
@@ -160,5 +160,5 @@ while not Salir:
        
        break
  else:
-   print("Opción inválida. Por favor, seleccione una opción válida.")     
+   print("\033[31mOpción inválida. Por favor, seleccione una opción válida.\033[0m")     
  
