@@ -8,6 +8,11 @@ Deposito = 0
 Movimiento= []
 
 while not Salir:
+ import time
+ print("\033[1m\033[34mIniciando cajero automático...]\033[0m")
+ time.sleep(2)
+ print("\033[1m\033[34mCajero automático listo.\033[0m\n") 
+ 
 
 #OPCION 1: CLAVES
  print("       ""\033[1mSELECCIONE SU OPERACION\033[0m"" \n ")
